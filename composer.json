@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "build": "phing"
+    },
+    "require-dev": {
+        "phing/phing": "2.*"
+    }
+}

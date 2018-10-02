@@ -1,0 +1,12 @@
+/**
+!/modules/
+/modules/*
+!/modules/mod_bppopup/
+!/modules/mod_bppopup/*
+
+!/LICENSE
+!/README.md
+!/build.xml
+!/composer.json
+!/composer.lock
+!/.gitignore

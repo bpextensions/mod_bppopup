@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+    
+	<name>mod_bppopup</name>
+	<author>${author.name}</author>
+	<creationDate>${build.date}</creationDate>
+	<copyright>Copyright (C) ${build.year} ${copyrights}. All rights reserved.</copyright>
+	<license>${license.name}, see ${license.url}</license>
+	<authorEmail>${author.email}</authorEmail>
+	<authorUrl>${author.url}</authorUrl>
+	<version>${build.version}</version>
+	<description>MOD_BPPOPUP_XML_DESCRIPTION</description>
+    
+	<files>
+		<filename module="mod_bppopup">mod_bppopup.php</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+	</files>
+    
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_bppopup.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_bppopup.sys.ini</language>
+		<language tag="pl-PL">pl-PL/pl-PL.mod_bppopup.ini</language>
+		<language tag="pl-PL">pl-PL/pl-PL.mod_bppopup.sys.ini</language>
+	</languages>
+
+    <config>
+		<fields name="params">
+			<fieldset name="basic">
+				
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+					rows="3"
+				/>
+
+				<field
+					name="cache"
+					type="list"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
