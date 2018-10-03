@@ -1,11 +1,12 @@
 # BP Popup
 A Joomla! 3 module that creates image/iframe popup.
 
-## Current status
-Development
+## Requirements
+- PHP 7
+- Joomla 3.8.x
 
-## Building from repo
-### Reqirements
+## Building extension from repo
+### Build reqirements
 - PHP 7
 - Composer
 - Node/Npm
