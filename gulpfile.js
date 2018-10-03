@@ -136,8 +136,19 @@ var vendor = {
         ])
         .pipe(gulp.dest('modules/mod_bppopup/assets/'));
 
+        // Magnific Popup Compression
+        var magnificPopupCompression = gulp.src([
+            'node_modules/magnific-popup/dist/magnific-popup.css'
+        ])
+        .pipe(uglifycss())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulp.dest('modules/mod_bppopup/assets/'));
+
         return merge(
-            magnificPopup
+            magnificPopup,
+            magnificPopupCompression,
         );
     },
     
