@@ -1,0 +1,16 @@
+/**
+!/modules/
+/modules/*
+!/modules/mod_bppopup/
+!/modules/mod_bppopup/*
+/modules/mod_bppopup/assets/*
+
+!/LICENSE
+!/README.md
+!/build.xml
+!/composer.json
+!/composer.lock
+!/.gitignore
+!/package.json
+!/package-lock.json
+!/gulpfile.js

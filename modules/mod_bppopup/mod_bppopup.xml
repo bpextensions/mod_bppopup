@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.8" client="site" method="upgrade">
+    
+	<name>mod_bppopup</name>
+	<author>${author.name}</author>
+	<creationDate>${build.date}</creationDate>
+	<copyright>Copyright (C) ${build.year} ${copyrights}. All rights reserved.</copyright>
+	<license>${license.name}, see ${license.url}</license>
+	<authorEmail>${author.email}</authorEmail>
+	<authorUrl>${author.url}</authorUrl>
+	<version>${build.version}</version>
+	<description>MOD_BPPOPUP_XML_DESCRIPTION</description>
+    
+	<files>
+		<filename module="mod_bppopup">mod_bppopup.php</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+	</files>
+    
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_bppopup.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_bppopup.sys.ini</language>
+		<language tag="pl-PL">pl-PL/pl-PL.mod_bppopup.ini</language>
+		<language tag="pl-PL">pl-PL/pl-PL.mod_bppopup.sys.ini</language>
+	</languages>
+
+    <config>
+		<fields name="params">
+			<fieldset name="basic">
+                <field name="mode" type="list"
+                    label="MOD_BPPOPUP_FIELD_MODE_LABEL"
+                    description="MOD_BPPOPUP_FIELD_MODE_DESC"
+                >
+                    <option value="image">MOD_BPPOPUP_FIELD_MODE_IMAGE</option>
+                    <option value="url">MOD_BPPOPUP_FIELD_MODE_URL</option>
+                </field>
+                <field name="image" type="media"
+                    preview="true" showon="mode:image"
+                    label="MOD_BPPOPUP_FIELD_IMAGE_LABEL"
+                    description="MOD_BPPOPUP_FIELD_IMAGE_DESC"
+                />
+                <field name="url" type="url" showon="mode:url"
+                    label="MOD_BPPOPUP_FIELD_URL_LABEL"
+                    description="MOD_BPPOPUP_FIELD_URL_DESC"
+                />
+                
+			</fieldset>
+            
+			<fieldset name="time" label="MOD_BPPOPUP_FIELDSET_TIME">
+                
+                <field name="time_mode" type="list" default="cookie"
+                    label="MOD_BPPOPUP_FIELD_TIME_MODE_LABEL"
+                    description="MOD_BPPOPUP_FIELD_TIME_MODE_DESC"
+                >
+                    <option value="session">MOD_BPPOPUP_FIELD_TIME_MODE_SESSION</option>
+                    <option value="cookie">MOD_BPPOPUP_FIELD_TIME_MODE_COOKIE</option>
+                </field>
+                <field name="cookie_time" type="number" default="1"
+                    min="1" step="1" filter="INT" showon="time_mode:cookie"
+                    label="MOD_BPPOPUP_FIELD_COOKIE_TIME_LABEL"
+                    description="MOD_BPPOPUP_FIELD_COOKIE_TIME_DESC"
+                />
+                
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+					rows="3"
+				/>
+
+				<field
+					name="cache"
+					type="list"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

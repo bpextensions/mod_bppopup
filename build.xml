@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="BP Poup" default="build:clean" basedir="." description="BP Popup build task">
+    
+    <property file="./build.properties" />
+    
+    <php expression="date('F Y')" returnProperty="build.date"/>
+    <php expression="date('Y')" returnProperty="build.year"/>
+    
+    <target name="build:mod_bppopup">
+        <echo msg="Creating module directory" />
+        <mkdir dir="./.build/mod_bppopup" />
+        
+        <echo msg="Building module installer" />
+        <copy todir="./.build/mod_bppopup" >
+            <fileset dir="./modules/mod_bppopup">
+                <include name="**/*" />
+                <exclude name="**/.dev/*" />
+                <exclude name="**/.dev" />
+            </fileset>
+            <filterchain>
+                <replacetokens begintoken="${" endtoken="}">
+                    <token key="build.date" value="${build.date}" />
+                    <token key="build.year" value="${build.year}" />
+                    <token key="copyrights" value="${copyrights}" />
+                    <token key="license.name" value="${license.name}" />
+                    <token key="license.url" value="${license.url}" />
+                    <token key="build.version" value="${build.version}" />
+                    <token key="package" value="${package}" />
+                    <token key="author.url" value="${author.url}" />
+                    <token key="author.name" value="${author.name}" />
+                    <token key="author.email" value="${author.email}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+
+        <echo msg="Creating module zipfile." />
+        <zip destfile="./.build/mod_bppopup.zip" basedir="./.build/mod_bppopup"/>
+    </target>
+    
+    <target name="build">
+        <echo msg="Creating build directory ./.build" />
+        <mkdir dir="./.build" />
+        
+        <echo msg="Building each of the extensions" />
+        <phingcall target="build:mod_bppopup"></phingcall>
+        
+    </target>
+
+    <target name="clean">
+        <echo msg="Removing build directory ./.build if exists" />
+        <delete dir="./.build" includeemptydirs="true"/>
+    </target>
+    
+    <target name="build:clean">
+        <echo msg="Creating a clean build." />
+        <phingcall target="clean"></phingcall>
+        <phingcall target="build"></phingcall>
+    </target>
+
+</project>
