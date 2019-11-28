@@ -27,15 +27,16 @@
 
     <config>
 		<fields name="params">
-			<fieldset name="basic">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_menus/models/fields">
                 <field name="mode" type="list"
                     label="MOD_BPPOPUP_FIELD_MODE_LABEL"
                     description="MOD_BPPOPUP_FIELD_MODE_DESC"
                 >
                     <option value="image">MOD_BPPOPUP_FIELD_MODE_IMAGE</option>
                     <option value="url">MOD_BPPOPUP_FIELD_MODE_URL</option>
+                    <option value="page">MOD_BPPOPUP_FIELD_MODE_PAGE</option>
                 </field>
-                <field name="image" type="media"
+                <field name="image" type="media" default=""
                     preview="true" showon="mode:image"
                     label="MOD_BPPOPUP_FIELD_IMAGE_LABEL"
                     description="MOD_BPPOPUP_FIELD_IMAGE_DESC"
@@ -44,6 +45,20 @@
                     label="MOD_BPPOPUP_FIELD_URL_LABEL"
                     description="MOD_BPPOPUP_FIELD_URL_DESC"
                 />
+                <field name="page" type="modal_menu" showon="mode:page"
+                    label="MOD_BPPOPUP_FIELD_PAGE_LABEL"
+                    description="MOD_BPPOPUP_FIELD_PAGE_DESC"
+                />
+
+				<field name="include-lightbox" type="radio" filter="INT"
+					   default="1"
+					   class="btn-group btn-group-yesno"
+					   label="MOD_BPPOPUP_FIELD_INCLUDE_LIGHTBOX_LABEL"
+					   description="MOD_BPPOPUP_FIELD_INCLUDE_LIGHTBOX_DESC"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
                 
 			</fieldset>
             

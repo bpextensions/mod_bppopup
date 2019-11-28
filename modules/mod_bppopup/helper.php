@@ -76,4 +76,26 @@ class ModBPPopupHelper
 
         return $can;
     }
+
+    /**
+     * Get asset url.
+     *
+     * @param   string  $url  Asset regular url.
+     *
+     * @return string
+     *
+     * @since 1.0.0
+     */
+    public static function getAssetUrl(string $url): string
+    {
+        $manifest = json_decode(file_get_contents(JPATH_SITE . '/modules/mod_bppopup/assets/manifest.json'), true);
+
+        $url = ltrim($url, '/');
+        if (key_exists($url, $manifest))
+        {
+            $url = $manifest[$url];
+        }
+
+        return $url;
+    }
 }

@@ -3,14 +3,16 @@
 /modules/*
 !/modules/mod_bppopup/
 !/modules/mod_bppopup/*
-/modules/mod_bppopup/assets/*
+!/modules/mod_bppopup/.dev/**
 
-!/LICENSE
-!/README.md
-!/build.xml
-!/composer.json
-!/composer.lock
-!/.gitignore
-!/package.json
-!/package-lock.json
-!/gulpfile.js
+!LICENSE
+!README.md
+!build.xml
+!composer.json
+!composer.lock
+!.gitignore
+!package.json
+!package-lock.json
+!gulpfile.js
+!build.properties
+!webpack.config.js

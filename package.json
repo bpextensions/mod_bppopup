@@ -1,35 +1,37 @@
 {
-    "name": "bp-popup",
+    "name": "mod_bppopup",
     "version": "1.0.0",
-    "description": "A Joomla! 3 module that creates image/iframe popup.",
-    "main": "bundle.js",
+    "description": "Joomla! 3 base theme build on Bootstrap 4",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "./node_modules/.bin/encore dev --progress",
+        "watch": "./node_modules/.bin/encore dev --watch",
+        "watch-prod": "./node_modules/.bin/encore prod --watch",
+        "prod": "./node_modules/.bin/encore prod --progress",
+        "build": "./node_modules/.bin/encore prod --progress"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://artur-stepien@github.com/bestproject/mod_bppopup.git"
+        "url": "git+https://artur-stepien@github.com/bestproject/basetheme.git"
     },
-    "author": {
-        "name": "Artur Stępień",
-        "email": "artur.stepien@bestproject.pl",
-        "url": "http://www.bestproject.pl/"
-    },
+    "author": "Artur Stepien",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/bestproject/mod_bppopup/issues"
     },
     "homepage": "https://github.com/bestproject/mod_bppopup#readme",
-    "dependencies": {
-        "gulp": "^4.0.0",
-        "gulp-clean": "^0.4.0",
-        "gulp-concat": "^2.6.1",
-        "gulp-rename": "^1.4.0",
-        "gulp-sass": "^4.0.1",
-        "gulp-uglify": "^3.0.1",
-        "gulp-uglifycss": "^1.1.0",
-        "gulp-watch": "^5.0.1",
+    "devDependencies": {
+        "@babel/preset-env": "^7.7.4",
+        "@symfony/webpack-encore": "^0.28.2",
         "magnific-popup": "^1.1.0",
-        "merge-stream": "^1.0.1"
-    }
+        "node-sass": "^4.13.0",
+        "sass-loader": "^7.3.1",
+        "webpack-notifier": "^1.8.0"
+    },
+    "dependencies": {},
+    "browserslist": [
+        "> 0.25%",
+        "not dead",
+        "IE 11"
+    ]
 }

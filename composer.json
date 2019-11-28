@@ -3,6 +3,7 @@
         "build": "phing"
     },
     "require-dev": {
-        "phing/phing": "2.*"
+        "phing/phing": "2.*",
+        "php": ">=7.0"
     }
 }
