@@ -23,9 +23,12 @@ $mode = $params->get('mode', 'image');
 $image = $params->get('image');
 $url = $params->get('url');
 $page = $params->get('page');
+$html = $params->get('html');
 $time_mode = $params->get('time_mode', 'cookie');
 $cookie_time = $params->get('cookie_time', '1');
 $include_lightbox = $params->get('include_lightbox', '1');
+$html_max_width = (int)$params->get('html_max_width', 640);
+$html_min_height = (int)$params->get('html_min_height');
 
 require_once __DIR__ . '/helper.php';
 

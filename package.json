@@ -26,7 +26,8 @@
         "magnific-popup": "^1.1.0",
         "node-sass": "^4.13.0",
         "sass-loader": "^7.3.1",
-        "webpack-notifier": "^1.8.0"
+        "webpack-notifier": "^1.8.0",
+        "serialize-javascript": "^2.1.1"
     },
     "dependencies": {},
     "browserslist": [
