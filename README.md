@@ -6,19 +6,23 @@ A Joomla! 3 module that creates image, iframe or HTML popup window.
 - Joomla 3.8.x
 
 ## Building extension from repo
-### Build reqirements
+### Build requirements
 - PHP 7
 - Composer
 - Node/Npm
 
 We assume you have `npm` and `composer` available globally.
 
-### Building procedure
+### Building preparing
+How to prepare your installation for development.
 - Install composer requirements: `composer install`
 - Install node requirements: `npm install`
-- Build installation package: `phing build`
+- Run `npm run build` to build your js/css assets. 
+- Run `npm run watch` to build your js/css assets after each change. 
 
-Your installation package should now be ready in `.build/`
+### Installation package build procedure
+- Build installation package: `composer build`
+- Your installation zip package should now be ready in `.build/`
 
 ## Changelog
 
