@@ -40,6 +40,17 @@ if( $mode ==='image' ) {
 }
 if( $mode ==='image' ) {
     $options['items']['src'] = '/'.$image;
+    if( !empty($url) ) {
+        $options['image']['markup'] = '
+            <div class="mfp-figure">
+                <div class="mfp-close"></div>
+                <a class="mfp-img-wrapper" href="'.$url.'"><span class="mfp-img"></span></a>
+                <div class="mfp-bottom-bar">
+                    <div class="mfp-title"></div>
+                    <div class="mfp-counter"></div>
+                </div>
+            </div>';
+    }
 } elseif ( in_array($mode, ['iframe','page']) ) {
     $options['items']['src'] = ($mode==='page' ? $url = Route::_('index.php?Itemid='.$page) : $url);
 } else {

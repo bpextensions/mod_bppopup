@@ -42,7 +42,7 @@
                     label="MOD_BPPOPUP_FIELD_IMAGE_LABEL"
                     description="MOD_BPPOPUP_FIELD_IMAGE_DESC"
                 />
-                <field name="url" type="url" showon="mode:url"
+                <field name="url" type="url" showon="mode:url,image"
                     label="MOD_BPPOPUP_FIELD_URL_LABEL"
                     description="MOD_BPPOPUP_FIELD_URL_DESC"
                 />
