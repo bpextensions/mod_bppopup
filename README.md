@@ -26,10 +26,16 @@ How to prepare your installation for development.
 
 ## Changelog
 
+### v1.1.2
+- Added updates server.
+
+### v1.1.1
+- Added URL for image type popups..
+
 ### v1.1.0
-- Added HTML support
-- Fixed Node security notification
+- Added HTML support.
+- Fixed Node security notification.
 
 ### v1.0.1
-- Added menu item parameter
-- Moved assets building to [WebpackEncore](https://github.com/symfony/webpack-encore)
+- Added menu item parameter.
+- Moved assets building to [WebpackEncore](https://github.com/symfony/webpack-encore).
