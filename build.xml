@@ -15,10 +15,9 @@
         
         <echo msg="Building module installer" />
         <copy todir="./.build/mod_bppopup" >
-            <fileset dir="./modules/mod_bppopup">
+            <fileset dir="./modules/mod_bppopup" >
                 <include name="**/*" />
-                <exclude name="**/.dev/*" />
-                <exclude name="**/.dev" />
+                <exclude name=".dev/**" />
             </fileset>
             <filterchain>
                 <replacetokens begintoken="${" endtoken="}">
