@@ -4,6 +4,9 @@
     },
     "require-dev": {
         "phing/phing": "2.*",
-        "php": ">=7.0"
+        "php": ">=7.1"
+    },
+    "require": {
+        "ext-json": "*"
     }
 }

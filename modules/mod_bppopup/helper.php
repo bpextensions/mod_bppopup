@@ -15,7 +15,7 @@ use Joomla\Registry\Registry;
 /**
  * Module helper class for BP Popup.
  */
-class ModBPPopupHelper
+final class ModBPPopupHelper
 {
     /**
      * Module params.
@@ -27,7 +27,7 @@ class ModBPPopupHelper
     /**
      * Module instance.
      *
-     * @var type
+     * @var object
      */
     protected $module;
 
@@ -35,8 +35,9 @@ class ModBPPopupHelper
      * Create module helper instance and execute calculation.
      *
      * @param Registry $params Module parameters.
+     * @param object $module Module instance.
      */
-    public function __construct(Registry $params, $module)
+    public function __construct(Registry $params, object $module)
     {
         $this->params = $params;
         $this->module = $module;
@@ -46,10 +47,12 @@ class ModBPPopupHelper
      * Can module display the popup?
      *
      * @return boolean
+     *
+     * @throws Exception
      */
-    public function canPopup()
+    public function canPopup(): bool
     {
-        $can = true;
+        $shown = true;
 
         /* @var $app CMSApplication */
         $app = Factory::getApplication();
@@ -71,10 +74,7 @@ class ModBPPopupHelper
             $session->set('bppopup_'.$this->module->id, 1);
         }
 
-        // If popup wasn't shown, it can popup
-        $can = !$shown;
-
-        return $can;
+        return !$shown;
     }
 
     /**

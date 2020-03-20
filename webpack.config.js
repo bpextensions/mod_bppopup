@@ -1,5 +1,9 @@
 var Encore = require('@symfony/webpack-encore');
 
+if (!Encore.isRuntimeEnvironmentConfigured()) {
+    Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev');
+}
+
 // Module build configuration
 Encore
     .setOutputPath('modules/mod_bppopup/assets')
