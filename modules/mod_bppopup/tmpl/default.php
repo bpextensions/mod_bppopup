@@ -66,8 +66,8 @@ if( $mode ==='image' ) {
 }
 
 if( $include_lightbox ) {
-    $doc->addStyleSheetVersion(ModBPPopupHelper::getAssetUrl('modules/mod_bppopup/assets/module.css'), ['version'=>'auto'], ['id'=>'mod-bppopup']);
-    $doc->addScriptVersion(ModBPPopupHelper::getAssetUrl('modules/mod_bppopup/assets/module.js'), ['version'=>'auto'], ['id'=>'mod-bppopup']);
+    $doc->addStyleSheet(ModBPPopupHelper::getAssetUrl('modules/mod_bppopup/assets/module.css'), ['version'=>'auto'], ['id'=>'mod-bppopup']);
+    $doc->addScript(ModBPPopupHelper::getAssetUrl('modules/mod_bppopup/assets/module.js'), ['version'=>'auto'], ['id'=>'mod-bppopup']);
 }
 $json = json_encode($options);
 $doc->addScriptDeclaration("jQuery(function($){
