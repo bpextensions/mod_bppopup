@@ -123,6 +123,6 @@
 	</config>
 
 	<updateservers>
-		<server type="extension" priority="2" name="BP Popup Updates">http://free.updates.bpextensions.com/mod_bppopup.xml</server>
+		<server type="extension" priority="2" name="BP Popup Updates">https://free.updates.bpextensions.com/mod_bppopup.xml</server>
 	</updateservers>
 </extension>
