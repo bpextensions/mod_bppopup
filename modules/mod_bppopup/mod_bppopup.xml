@@ -36,31 +36,45 @@
                     <option value="url">MOD_BPPOPUP_FIELD_MODE_URL</option>
                     <option value="page">MOD_BPPOPUP_FIELD_MODE_PAGE</option>
                     <option value="html">MOD_BPPOPUP_FIELD_MODE_HTML</option>
-                </field>
-                <field name="image" type="media" default=""
-                    preview="true" showon="mode:image"
-                    label="MOD_BPPOPUP_FIELD_IMAGE_LABEL"
-                    description="MOD_BPPOPUP_FIELD_IMAGE_DESC"
-                />
-                <field name="url" type="url" showon="mode:url,image"
-                    label="MOD_BPPOPUP_FIELD_URL_LABEL"
-                    description="MOD_BPPOPUP_FIELD_URL_DESC"
-                />
-                <field name="html" type="textarea" showon="mode:html" filter="raw"
-                    label="MOD_BPPOPUP_FIELD_HTML_LABEL"
-                    description="MOD_BPPOPUP_FIELD_HTML_DESC"
-                />
-                <field name="html_max_width" type="text" showon="mode:html" filter="int" default="640"
-                    label="MOD_BPPOPUP_FIELD_HTML_MAX_WIDTH_LABEL"
-                    description="MOD_BPPOPUP_FIELD_HTML_MAX_WIDTH_DESC"
-                />
-                <field name="html_min_height" type="text" showon="mode:html" filter="int"
-                    label="MOD_BPPOPUP_FIELD_HTML_MIN_HEIGHT_LABEL"
-                    description="MOD_BPPOPUP_FIELD_HTML_MIN_HEIGHT_DESC"
-                />
-                <field name="page" type="modal_menu" showon="mode:page"
-                    label="MOD_BPPOPUP_FIELD_PAGE_LABEL"
-                    description="MOD_BPPOPUP_FIELD_PAGE_DESC"
+                    <option value="text">MOD_BPPOPUP_FIELD_MODE_TEXT</option>
+				</field>
+				<field name="image" type="media" default=""
+					   preview="true" showon="mode:image"
+					   label="MOD_BPPOPUP_FIELD_IMAGE_LABEL"
+					   description="MOD_BPPOPUP_FIELD_IMAGE_DESC"
+				/>
+				<field name="url" type="url" showon="mode:url,image"
+					   label="MOD_BPPOPUP_FIELD_URL_LABEL"
+					   description="MOD_BPPOPUP_FIELD_URL_DESC"
+				/>
+				<field name="html" type="editor" showon="mode:html" filter="raw"
+					   editor="codemirror|none"
+					   buttons="no" height="500px"
+					   rows="20" cols="80"
+					   syntax="html"
+					   label="MOD_BPPOPUP_FIELD_HTML_LABEL"
+					   description="MOD_BPPOPUP_FIELD_HTML_DESC"
+				/>
+				<field name="text" type="editor" showon="mode:text" filter="raw"
+					   height="500px"
+					   hide="readmore,pagebreak"
+					   rows="20" cols="80"
+					   label="MOD_BPPOPUP_FIELD_TEXT_LABEL"
+					   description="MOD_BPPOPUP_FIELD_TEXT_DESC"
+				/>
+				<field name="html_max_width" type="text" showon="mode:html,text" filter="int"
+					   hint="MOD_BPPOPUP_FIELD_HTML_MAX_WIDTH_HINT"
+					   label="MOD_BPPOPUP_FIELD_HTML_MAX_WIDTH_LABEL"
+					   description="MOD_BPPOPUP_FIELD_HTML_MAX_WIDTH_DESC"
+				/>
+				<field name="html_min_height" type="text" showon="mode:html,text" filter="int"
+					   hint="MOD_BPPOPUP_FIELD_HTML_MAX_HEIGHT_HINT"
+					   label="MOD_BPPOPUP_FIELD_HTML_MIN_HEIGHT_LABEL"
+					   description="MOD_BPPOPUP_FIELD_HTML_MIN_HEIGHT_DESC"
+				/>
+				<field name="page" type="modal_menu" showon="mode:page"
+					   label="MOD_BPPOPUP_FIELD_PAGE_LABEL"
+					   description="MOD_BPPOPUP_FIELD_PAGE_DESC"
                 />
 
 				<field name="include-lightbox" type="radio" filter="INT"
@@ -80,16 +94,33 @@
                 <field name="time_mode" type="list" default="cookie"
                     label="MOD_BPPOPUP_FIELD_TIME_MODE_LABEL"
                     description="MOD_BPPOPUP_FIELD_TIME_MODE_DESC"
-                >
-                    <option value="session">MOD_BPPOPUP_FIELD_TIME_MODE_SESSION</option>
-                    <option value="cookie">MOD_BPPOPUP_FIELD_TIME_MODE_COOKIE</option>
-                </field>
-                <field name="cookie_time" type="number" default="1"
-                    min="1" step="1" filter="INT" showon="time_mode:cookie"
-                    label="MOD_BPPOPUP_FIELD_COOKIE_TIME_LABEL"
-                    description="MOD_BPPOPUP_FIELD_COOKIE_TIME_DESC"
-                />
-                
+				>
+					<option value="session">MOD_BPPOPUP_FIELD_TIME_MODE_SESSION</option>
+					<option value="cookie">MOD_BPPOPUP_FIELD_TIME_MODE_COOKIE</option>
+					<option value="view">MOD_BPPOPUP_FIELD_TIME_MODE_VIEW</option>
+				</field>
+				<field name="cookie_time" type="number" default="1"
+					   min="1" step="1" filter="INT" showon="time_mode:cookie"
+					   label="MOD_BPPOPUP_FIELD_COOKIE_TIME_LABEL"
+					   description="MOD_BPPOPUP_FIELD_COOKIE_TIME_DESC"
+				/>
+
+				<field name="scroll_event" type="radio" filter="WORD"
+					   default="no"
+					   class="btn-group"
+					   label="MOD_BPPOPUP_FIELD_SCROLL_EVENT_LABEL"
+					   description="MOD_BPPOPUP_FIELD_SCROLL_EVENT_DESC"
+				>
+					<option value="no">JNO</option>
+					<option value="pixels">MOD_BPPOPUP_FIELD_SCROLL_EVENT_OPTION_PIXELS</option>
+					<option value="end_of_page">MOD_BPPOPUP_FIELD_SCROLL_EVENT_OPTION_END_OF_PAGE</option>
+				</field>
+				<field name="scroll_length" type="number" default="500"
+					   step="10" filter="INT" showon="scroll_event:pixels"
+					   label="MOD_BPPOPUP_FIELD_SCROLL_LENGTH_LABEL"
+					   description="MOD_BPPOPUP_FIELD_SCROLL_LENGTH_DESC"
+				/>
+
 			</fieldset>
 
 			<fieldset name="advanced">

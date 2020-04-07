@@ -24,12 +24,14 @@
         "@babel/preset-env": "^7.7.4",
         "@symfony/webpack-encore": "^0.28.2",
         "magnific-popup": "^1.1.0",
-        "node-sass": "^4.13.0",
+        "node-sass": "^4.13.1",
         "sass-loader": "^7.3.1",
-        "webpack-notifier": "^1.8.0",
-        "serialize-javascript": "^2.1.1"
+        "serialize-javascript": "^2.1.1",
+        "webpack-notifier": "^1.8.0"
     },
-    "dependencies": {},
+    "dependencies": {
+        "js-cookie": "^2.2.1"
+    },
     "browserslist": [
         "> 0.25%",
         "not dead",

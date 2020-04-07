@@ -24,11 +24,14 @@ $image = $params->get('image');
 $url = $params->get('url');
 $page = $params->get('page');
 $html = $params->get('html');
+$text = $params->get('text');
 $time_mode = $params->get('time_mode', 'cookie');
 $cookie_time = $params->get('cookie_time', '1');
 $include_lightbox = $params->get('include_lightbox', '1');
 $html_max_width = (int)$params->get('html_max_width', 640);
 $html_min_height = (int)$params->get('html_min_height');
+$scroll_event = $params->get('scroll_event', 'no');
+$scroll_length = (int)$params->get('scroll_length', 1);
 
 require_once __DIR__ . '/helper.php';
 
