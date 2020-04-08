@@ -34,7 +34,7 @@ $moduleWrapperId = 'popupWrapper'.$module->id;
 $options = [];
 if ($mode === 'image') {
     $options['items']['type'] = 'image';
-} elseif (in_array($mode, ['iframe', 'page'])) {
+} elseif (in_array($mode, ['iframe', 'url', 'page'])) {
     $options['items']['type'] = 'iframe';
 } else {
     $options['items']['type'] = 'inline';
@@ -52,8 +52,8 @@ if ($mode === 'image') {
                 </div>
             </div>';
     }
-} elseif ( in_array($mode, ['iframe','page']) ) {
-    $options['items']['src'] = ($mode==='page' ? $url = Route::_('index.php?Itemid='.$page) : $url);
+} elseif (in_array($mode, ['iframe', 'url', 'page'])) {
+    $options['items']['src'] = ($mode === 'page' ? $url = Route::_('index.php?Itemid=' . $page) : $url);
 } else {
 
     // Determine code source

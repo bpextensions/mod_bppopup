@@ -26,6 +26,9 @@ How to prepare your installation for development.
 
 ## Changelog
 
+### v1.2.1
+- Fixing iframe popup issue.
+
 ### v1.2.0
 - Moving PHP requirement to 7.2+.
 - Fixing documentation.
