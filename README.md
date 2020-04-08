@@ -26,6 +26,14 @@ How to prepare your installation for development.
 
 ## Changelog
 
+### v1.2.0
+- Moving PHP requirement to 7.2+.
+- Fixing documentation.
+- Added scroll activation.
+- Added activation on reaching page end.
+- Added WYSIWYG editor text as a popup-content.
+- Added ability to popup on every page display.
+
 ### v1.1.2
 - Added updates server.
 

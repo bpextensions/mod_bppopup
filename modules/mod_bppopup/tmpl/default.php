@@ -5,7 +5,7 @@
  *
  * @copyright   Copyright (C) ${build.year} ${copyrights},  All rights reserved.
  * @license     ${license.name}; see ${license.url}
- * @author      ${author.name}347702
+ * @author      ${author.name}
  */
 
 use Joomla\CMS\Document\HtmlDocument;

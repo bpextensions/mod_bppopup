@@ -50,6 +50,8 @@ final class ModBPPopupHelper
      * @return boolean
      *
      * @throws Exception
+     *
+     * @since 1.0.0
      */
     public function canPopup(): bool
     {
@@ -96,6 +98,8 @@ final class ModBPPopupHelper
      * @param int $module_id Module ID.
      *
      * @throws Exception
+     *
+     * @since 1.2.0
      */
     protected static function saveSessionDisplayEvent(int $module_id)
     {
@@ -128,15 +132,12 @@ final class ModBPPopupHelper
     /**
      * Save session/cookie information about popup being displayed.
      *
-     * @return bool
-     *
      * @throws Exception
+     *
+     * @since 1.2.0
      */
     public static function getAjax()
     {
-        $result = true;
-        $module_id = Factory::getApplication()->input->get('module_id');
-
-        return $result;
+        static::saveSessionDisplayEvent(Factory::getApplication()->input->get('module_id'));
     }
 }

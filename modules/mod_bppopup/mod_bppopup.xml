@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.8" client="site" method="upgrade">
-    
+
 	<name>mod_bppopup</name>
 	<author>${author.name}</author>
 	<creationDate>${build.date}</creationDate>
-	<copyright>Copyright (C) ${build.year} ${copyrights}. All rights reserved.</copyright>
+	<copyright>Copyright (C) ${build.year} ${copyrights} All rights reserved.</copyright>
 	<license>${license.name}, see ${license.url}</license>
 	<authorEmail>${author.email}</authorEmail>
 	<authorUrl>${author.url}</authorUrl>
 	<version>${build.version}</version>
 	<description>MOD_BPPOPUP_XML_DESCRIPTION</description>
-    
+
 	<files>
 		<filename module="mod_bppopup">mod_bppopup.php</filename>
 		<folder>assets</folder>
