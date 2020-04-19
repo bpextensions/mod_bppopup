@@ -5,6 +5,7 @@
 !/modules/mod_bppopup/*
 !/modules/mod_bppopup/.dev/**
 
+!/.dev
 !LICENSE
 !README.md
 !build.xml

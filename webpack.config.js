@@ -1,4 +1,4 @@
-var Encore = require('@symfony/webpack-encore');
+const Encore = require('@symfony/webpack-encore');
 
 if (!Encore.isRuntimeEnvironmentConfigured()) {
     Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev');
@@ -23,8 +23,8 @@ Encore
         joomla: 'Joomla',
     })
     .addEntry('module', [
-        './modules/mod_bppopup/.dev/js/module.js',
-        './modules/mod_bppopup/.dev/scss/module.scss',
+        './.dev/js/module.js',
+        './.dev/scss/module.scss',
     ])
     .configureFilenames({
         css: '[name]-[hash:6].css',

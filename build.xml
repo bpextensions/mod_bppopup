@@ -11,7 +11,7 @@
         <mkdir dir="./.build/mod_bppopup" />
 
         <echo msg="Building assets with Webpack"/>
-        <exec command="npm run prod" passthru="true" checkreturn="true"/>
+        <exec command="npm run prod" checkreturn="true"/>
         
         <echo msg="Building module installer" />
         <copy todir="./.build/mod_bppopup" >
@@ -46,7 +46,7 @@
         <mkdir dir="./.build" />
         
         <echo msg="Building each of the extensions" />
-        <phingcall target="build:mod_bppopup"></phingcall>
+        <phingcall target="build:mod_bppopup"/>
         
     </target>
 
@@ -54,11 +54,11 @@
         <echo msg="Removing build directory ./.build if exists" />
         <delete dir="./.build" includeemptydirs="true"/>
     </target>
-    
+
     <target name="build:clean">
-        <echo msg="Creating a clean build." />
-        <phingcall target="clean"></phingcall>
-        <phingcall target="build"></phingcall>
+        <echo msg="Creating a clean build."/>
+        <phingcall target="clean"/>
+        <phingcall target="build"/>
     </target>
 
 </project>
