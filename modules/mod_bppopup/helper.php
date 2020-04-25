@@ -13,6 +13,8 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Session\Session;
 use Joomla\Registry\Registry;
 
+defined('_JEXEC') or die;
+
 /**
  * Module helper class for BP Popup.
  */
