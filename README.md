@@ -2,12 +2,12 @@
 A Joomla! 3 module that creates image, iframe or HTML popup window.
 
 ## Requirements
-- PHP 7
+- PHP 7.2
 - Joomla 3.8.x
 
 ## Building extension from repo
 ### Build requirements
-- PHP 7
+- PHP 7.2
 - Composer
 - Node/Npm
 
@@ -26,6 +26,10 @@ How to prepare your installation for development.
 
 ## Changelog
 
+### v1.2.4
+- Fixed module behavior when Joomla! is installed in a subdirectory.
+- Added donation message in administration
+
 ### v1.2.1
 - Fixing iframe popup issue.
 
@@ -38,10 +42,10 @@ How to prepare your installation for development.
 - Added ability to popup on every page display.
 
 ### v1.1.2
-- Added updates server.
+- Added update server.
 
 ### v1.1.1
-- Added URL for image type popups..
+- Added URL for image type popups.
 
 ### v1.1.0
 - Added HTML support.
