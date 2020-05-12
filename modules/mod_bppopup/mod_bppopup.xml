@@ -15,6 +15,7 @@
 		<filename module="mod_bppopup">mod_bppopup.php</filename>
 		<folder>assets</folder>
 		<folder>tmpl</folder>
+		<folder>fields</folder>
 		<filename>helper.php</filename>
 	</files>
     
