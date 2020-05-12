@@ -12,11 +12,11 @@
 	<description>MOD_BPPOPUP_XML_DESCRIPTION</description>
 
 	<files>
-		<filename module="mod_bppopup">mod_bppopup.php</filename>
 		<folder>assets</folder>
-		<folder>tmpl</folder>
 		<folder>fields</folder>
+		<folder>tmpl</folder>
 		<filename>helper.php</filename>
+		<filename module="mod_bppopup">mod_bppopup.php</filename>
 	</files>
     
 	<languages folder="language">
