@@ -28,15 +28,20 @@
     <config>
 		<fields name="params">
 			<fieldset name="basic" addfieldpath="/administrator/components/com_menus/models/fields">
-                <field name="mode" type="list"
-                    label="MOD_BPPOPUP_FIELD_MODE_LABEL"
-                    description="MOD_BPPOPUP_FIELD_MODE_DESC"
-                >
-                    <option value="image">MOD_BPPOPUP_FIELD_MODE_IMAGE</option>
-                    <option value="url">MOD_BPPOPUP_FIELD_MODE_URL</option>
-                    <option value="page">MOD_BPPOPUP_FIELD_MODE_PAGE</option>
-                    <option value="html">MOD_BPPOPUP_FIELD_MODE_HTML</option>
-                    <option value="text">MOD_BPPOPUP_FIELD_MODE_TEXT</option>
+				<field
+						addfieldpath="/modules/mod_bppopup/fields"
+						name="donate"
+						type="bpdonate"
+				/>
+				<field name="mode" type="list"
+					   label="MOD_BPPOPUP_FIELD_MODE_LABEL"
+					   description="MOD_BPPOPUP_FIELD_MODE_DESC"
+				>
+					<option value="image">MOD_BPPOPUP_FIELD_MODE_IMAGE</option>
+					<option value="url">MOD_BPPOPUP_FIELD_MODE_URL</option>
+					<option value="page">MOD_BPPOPUP_FIELD_MODE_PAGE</option>
+					<option value="html">MOD_BPPOPUP_FIELD_MODE_HTML</option>
+					<option value="text">MOD_BPPOPUP_FIELD_MODE_TEXT</option>
 				</field>
 				<field name="image" type="media" default=""
 					   preview="true" showon="mode:image"
