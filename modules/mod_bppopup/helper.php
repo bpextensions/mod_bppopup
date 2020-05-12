@@ -37,8 +37,8 @@ final class ModBPPopupHelper
     /**
      * Create module helper instance and execute calculation.
      *
-     * @param Registry $params Module parameters.
-     * @param object $module Module instance.
+     * @param   Registry  $params  Module parameters.
+     * @param   object    $module  Module instance.
      */
     public function __construct(Registry $params, object $module)
     {
@@ -47,73 +47,9 @@ final class ModBPPopupHelper
     }
 
     /**
-     * Can module display the popup?
-     *
-     * @return boolean
-     *
-     * @throws Exception
-     *
-     * @since 1.0.0
-     */
-    public function canPopup(): bool
-    {
-        $shown = true;
-
-        /* @var $app CMSApplication */
-        $app = Factory::getApplication();
-        $time_mode = $this->params->get('time_mode', 'cookie');
-        $scroll_event = $this->params->get('scroll_event', 'no');
-
-        // If module works in cookie mode
-        if ($time_mode === 'cookie') {
-
-            $shown = $app->input->cookie->get('bppopup_' . $this->module->id, 0);
-            $expire_in_days = $this->params->get('cookie_time', 1);
-            $expire_date = time() + ($expire_in_days * 24 * 60 * 60);
-
-            // Popup is about to be displayed, dont show again
-            if ($scroll_event === 'no') {
-                $app->input->cookie->set('bppopup_' . $this->module->id, '1', $expire_date);
-            }
-
-            // If module works in session mode
-        } elseif ($time_mode === 'session') {
-
-            /* @var $session Session */
-            $session = $app->getSession();
-            $shown = $session->get('bppopup_' . $this->module->id, 0);
-
-            // Popup is about to be displayed, dont show again
-            if ($scroll_event === 'no') {
-                $session->set('bppopup_' . $this->module->id, 1);
-            }
-        } elseif ($time_mode === 'view') {
-            $shown = 0;
-        }
-
-        return !$shown;
-    }
-
-    /**
-     * Save information about popup being displayed.
-     *
-     * @param int $module_id Module ID.
-     *
-     * @throws Exception
-     *
-     * @since 1.2.0
-     */
-    protected static function saveSessionDisplayEvent(int $module_id)
-    {
-        /* @var $session Session */
-        $session = Factory::getApplication()->getSession();
-        $session->set('bppopup_' . $module_id, 1);
-    }
-
-    /**
      * Get asset url.
      *
-     * @param string $url Asset regular url.
+     * @param   string  $url  Asset regular url.
      *
      * @return string
      *
@@ -138,8 +74,72 @@ final class ModBPPopupHelper
      *
      * @since 1.2.0
      */
-    public static function getAjax()
+    public static function getAjax(): void
     {
         static::saveSessionDisplayEvent(Factory::getApplication()->input->get('module_id'));
+    }
+
+    /**
+     * Save information about popup being displayed.
+     *
+     * @param   int  $module_id  Module ID.
+     *
+     * @throws Exception
+     *
+     * @since 1.2.0
+     */
+    protected static function saveSessionDisplayEvent(int $module_id): void
+    {
+        /* @var $session Session */
+        $session = Factory::getApplication()->getSession();
+        $session->set('bppopup_' . $module_id, 1);
+    }
+
+    /**
+     * Can module display the popup?
+     *
+     * @return boolean
+     *
+     * @throws Exception
+     *
+     * @since 1.0.0
+     */
+    public function canPopup(): bool
+    {
+        $shown = true;
+
+        /* @var $app CMSApplication */
+        $app          = Factory::getApplication();
+        $time_mode    = $this->params->get('time_mode', 'cookie');
+        $scroll_event = $this->params->get('scroll_event', 'no');
+
+        // If module works in cookie mode
+        if ($time_mode === 'cookie') {
+
+            $shown          = $app->input->cookie->get('bppopup_' . $this->module->id, 0);
+            $expire_in_days = $this->params->get('cookie_time', 1);
+            $expire_date    = time() + ($expire_in_days * 24 * 60 * 60);
+
+            // Popup is about to be displayed, dont show again
+            if ($scroll_event === 'no') {
+                $app->input->cookie->set('bppopup_' . $this->module->id, '1', $expire_date);
+            }
+
+            // If module works in session mode
+        } elseif ($time_mode === 'session') {
+
+            /* @var $session Session */
+            $session = $app->getSession();
+            $shown   = $session->get('bppopup_' . $this->module->id, 0);
+
+            // Popup is about to be displayed, dont show again
+            if ($scroll_event === 'no') {
+                $session->set('bppopup_' . $this->module->id, 1);
+            }
+        } elseif ($time_mode === 'view') {
+            $shown = 0;
+        }
+
+        return !$shown;
     }
 }

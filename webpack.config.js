@@ -7,7 +7,7 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 // Module build configuration
 Encore
     .setOutputPath('modules/mod_bppopup/assets')
-    .setPublicPath('/modules/mod_bppopup/assets/')
+    .setPublicPath('modules/mod_bppopup/assets/')
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
     .enableSassLoader()

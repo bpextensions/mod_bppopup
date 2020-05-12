@@ -10,6 +10,7 @@
 
 use Joomla\CMS\Document\HtmlDocument;
 use Joomla\CMS\Router\Route;
+use Joomla\CMS\Uri\Uri;
 
 /**
  * @var string $mode Iframe or image mode.
@@ -40,7 +41,7 @@ if ($mode === 'image') {
     $options['items']['type'] = 'inline';
 }
 if ($mode === 'image') {
-    $options['items']['src'] = '/' . $image;
+    $options['items']['src'] = rtrim(Uri::base(true), '/') . '/' . $image;
     if (!empty($url)) {
         $options['image']['markup'] = '
             <div class="mfp-figure">
