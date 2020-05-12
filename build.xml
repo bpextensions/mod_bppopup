@@ -32,6 +32,7 @@
                     <token key="author.url" value="${author.url}" />
                     <token key="author.name" value="${author.name}" />
                     <token key="author.email" value="${author.email}" />
+                    <token key="donate.url" value="${donate.url}"/>
                 </replacetokens>
             </filterchain>
         </copy>
