@@ -13,24 +13,28 @@ use Joomla\CMS\Router\Route;
 use Joomla\CMS\Uri\Uri;
 
 /**
- * @var string $mode Iframe or image mode.
- * @var string $image Popup image url.
- * @var string $url Iframe popup url.
- * @var string $page Page item_id.
- * @var string $include_lightbox Include Magnific Popup assets?
- * @var string $mode Iframe mode.
- * @var string $html HTML for inline mode.
- * @var string $text HTML code from a text field mode.
- * @var int $html_min_width Minimum width for HTML popup.
- * @var int $html_min_height Minimum height for HTML popup.
- * @var stdClass $module Current module instance.
- * @var HtmlDocument $doc System document instance.
+ * @var string       $mode             Iframe or image mode.
+ * @var string       $image            Popup image url.
+ * @var string       $url              Iframe popup url.
+ * @var string       $page             Page item_id.
+ * @var string       $scroll_event     Name of the scroll event.
+ * @var string       $time_mode        Mode of the time calculation.
+ * @var string       $include_lightbox Include Magnific Popup assets?
+ * @var string       $mode             Iframe mode.
+ * @var string       $html             HTML for inline mode.
+ * @var string       $text             HTML code from a text field mode.
+ * @var int          $html_max_width   Maximum width for HTML popup.
+ * @var int          $html_min_height  Minimum height for HTML popup.
+ * @var int          $cookie_time      Time to live for a cookie.
+ * @var int          $scroll_length    Scroll length (after/before reaching the distance popup will occur)
+ * @var stdClass     $module           Current module instance.
+ * @var HtmlDocument $doc              System document instance.
  */
 
 defined('_JEXEC') or die;
 
 JHtml::_('jquery.framework');
-$moduleWrapperId = 'popupWrapper'.$module->id;
+$moduleWrapperId = 'popupWrapper' . $module->id;
 
 $options = [];
 if ($mode === 'image') {
@@ -63,11 +67,11 @@ if ($mode === 'image') {
         $code = $text;
     }
 
-    $options['items']['src'] = '<div id="' . $moduleWrapperId . '" class="bppopup-mode-' . $mode . '">' . $code . '</div>';
+    $options['items']['src']      = '<div id="' . $moduleWrapperId . '" class="bppopup-mode-' . $mode . '">' . $code . '</div>';
     $options['items']['midClick'] = true;
-    $options['closeBtnInside'] = false;
-    $html_max_width = $html_max_width > 0 ? "max-width:{$html_max_width}px;" : '';
-    $html_min_height = $html_min_height > 0 ? "min-height:{$html_min_height}px;" : '';
+    $options['closeBtnInside']    = false;
+    $html_max_width               = $html_max_width > 0 ? "max-width:{$html_max_width}px;" : '';
+    $html_min_height              = $html_min_height > 0 ? "min-height:{$html_min_height}px;" : '';
     $doc->addStyleDeclaration("
         #$moduleWrapperId{{$html_max_width}{$html_min_height}margin: 20px auto;position: relative;};
         .mfp-content #$moduleWrapperId{{$html_max_width}{$html_min_height}};
@@ -75,13 +79,15 @@ if ($mode === 'image') {
 }
 
 if ($include_lightbox) {
-    $doc->addStyleSheet(ModBPPopupHelper::getAssetUrl('modules/mod_bppopup/assets/module.css'), ['version' => 'auto'], ['id' => 'mod-bppopup']);
-    $doc->addScript(ModBPPopupHelper::getAssetUrl('modules/mod_bppopup/assets/module.js'), ['version' => 'auto'], ['id' => 'mod-bppopup']);
+    $doc->addStyleSheet(ModBPPopupHelper::getAssetUrl('modules/mod_bppopup/assets/module.css'), ['version' => 'auto'],
+        ['id' => 'mod-bppopup']);
+    $doc->addScript(ModBPPopupHelper::getAssetUrl('modules/mod_bppopup/assets/module.js'), ['version' => 'auto'],
+        ['id' => 'mod-bppopup']);
 }
 $json = json_encode($options);
 
 // Just display the popup
-if ($scroll_event == 'no') {
+if ($scroll_event === 'no') {
     $doc->addScriptDeclaration("jQuery(function($){
         $.magnificPopup.open($json);
     });");
@@ -98,7 +104,7 @@ if ($scroll_event == 'no') {
 
         // Save information in the session
     } elseif ($time_mode === 'session') {
-        $event_store_url = Route::_('index.php?option=com_ajax&module=bppopup&format=json&module_id=' . $module->id);
+        $event_store_url    = Route::_('index.php?option=com_ajax&module=bppopup&format=json&module_id=' . $module->id);
         $post_display_event = "$.ajax({'url':'$event_store_url'});";
     }
 
