@@ -10,8 +10,14 @@
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Helper\ModuleHelper;
+use Joomla\Registry\Registry;
 
 defined('_JEXEC') or die;
+
+/**
+ * @var Registry $params
+ * @var stdClass $module
+ */
 
 // Default objects and variables
 $doc    = Factory::getDocument();
@@ -32,6 +38,7 @@ $html_max_width   = (int)$params->get('html_max_width', 640);
 $html_min_height  = (int)$params->get('html_min_height');
 $scroll_event     = $params->get('scroll_event', 'no');
 $scroll_length    = (int)$params->get('scroll_length', 1);
+$target           = $params->get('target', 'self');
 
 require_once __DIR__ . '/helper.php';
 

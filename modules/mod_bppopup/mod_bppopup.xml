@@ -53,6 +53,15 @@
 					   label="MOD_BPPOPUP_FIELD_URL_LABEL"
 					   description="MOD_BPPOPUP_FIELD_URL_DESC"
 				/>
+				<field name="target" type="list" showon="mode:image[AND]url!:"
+					   label="MOD_BPPOPUP_FIELD_TARGET_LABEL"
+					   description="MOD_BPPOPUP_FIELD_TARGET_DESC"
+				>
+					<option value="_self">MOD_BPPOPUP_FIELD_TARGET_OPTION_SELF</option>
+					<option value="_blank">MOD_BPPOPUP_FIELD_TARGET_OPTION_BLANK</option>
+					<option value="_parent">MOD_BPPOPUP_FIELD_TARGET_OPTION_PARENT</option>
+					<option value="_top">MOD_BPPOPUP_FIELD_TARGET_OPTION_TOP</option>
+				</field>
 				<field name="html" type="editor" showon="mode:html" filter="raw"
 					   editor="codemirror|none"
 					   buttons="no" height="500px"

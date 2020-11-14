@@ -23,6 +23,7 @@ use Joomla\CMS\Uri\Uri;
  * @var string       $mode             Iframe mode.
  * @var string       $html             HTML for inline mode.
  * @var string       $text             HTML code from a text field mode.
+ * @var string       $target           Target window for clicked anchor.
  * @var int          $html_max_width   Maximum width for HTML popup.
  * @var int          $html_min_height  Minimum height for HTML popup.
  * @var int          $cookie_time      Time to live for a cookie.
@@ -47,10 +48,15 @@ if ($mode === 'image') {
 if ($mode === 'image') {
     $options['items']['src'] = rtrim(Uri::base(true), '/') . '/' . $image;
     if (!empty($url)) {
+
+        // Target window
+        $target = (!empty($target) ? 'target="' . $target . '"' : '');
+
+        // Popup HTML
         $options['image']['markup'] = '
             <div class="mfp-figure">
                 <div class="mfp-close"></div>
-                <a class="mfp-img-wrapper" href="' . $url . '"><span class="mfp-img"></span></a>
+                <a class="mfp-img-wrapper" href="' . $url . '" ' . $target . '><span class="mfp-img"></span></a>
                 <div class="mfp-bottom-bar">
                     <div class="mfp-title"></div>
                     <div class="mfp-counter"></div>
