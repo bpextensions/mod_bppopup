@@ -44,6 +44,16 @@
 					<option value="html">MOD_BPPOPUP_FIELD_MODE_HTML</option>
 					<option value="text">MOD_BPPOPUP_FIELD_MODE_TEXT</option>
 				</field>
+				<field name="location" type="list"
+					   label="MOD_BPPOPUP_FIELD_LOCATION_LABEL"
+					   description="MOD_BPPOPUP_FIELD_LOCATION_DESC"
+				>
+					<option value="center">MOD_BPPOPUP_FIELD_MODE_LOCATION_CENTER</option>
+					<option value="right-top">MOD_BPPOPUP_FIELD_MODE_LOCATION_RIGHT_TOP</option>
+					<option value="right-bottom">MOD_BPPOPUP_FIELD_MODE_LOCATION_RIGHT_BOTTOM</option>
+					<option value="left-bottom">MOD_BPPOPUP_FIELD_MODE_LOCATION_LEFT_BOTTOM</option>
+					<option value="left-top">MOD_BPPOPUP_FIELD_MODE_LOCATION_LEFT_TOP</option>
+				</field>
 				<field name="image" type="media" default=""
 					   preview="true" showon="mode:image"
 					   label="MOD_BPPOPUP_FIELD_IMAGE_LABEL"

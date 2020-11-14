@@ -60,7 +60,7 @@ final class ModBPPopupHelper
         $manifest = json_decode(file_get_contents(JPATH_SITE . '/modules/mod_bppopup/assets/manifest.json'), true);
 
         $url = ltrim($url, '/');
-        if (key_exists($url, $manifest)) {
+        if (array_key_exists($url, $manifest)) {
             $url = $manifest[$url];
         }
 
@@ -142,4 +142,60 @@ final class ModBPPopupHelper
 
         return !$shown;
     }
+
+    /**
+     * Get location CSS style.
+     *
+     * @return string
+     */
+    public function getLocationStyle(): string
+    {
+        $style = '';
+
+        $location  = $this->params->get('location', 'center');
+        $module_id = (int)$this->module->id;
+
+        if ($location !== 'center') {
+            $style .= "
+                #bppopup-bg-{$module_id}, #bppopup-wrap-{$module_id}, #bppopup-wrap-{$module_id} .mfp-container {
+                    background:none !important;pointer-events:none; 
+                }
+                #bppopup-wrap-{$module_id} .mfp-content {
+                    pointer-events: all !important;position:absolute;
+                }
+                #bppopup-wrap-{$module_id} .mfp-close {color:#000 !important;}
+                .mfp-zoom-out-cur {cursor:inherit !important}
+            ";
+        }
+
+        if ($location === 'right-top') {
+            $style .= "
+                #bppopup-wrap-{$module_id} .mfp-content {
+                    right:40px;top:0;
+                }
+            ";
+        } elseif ($location === 'right-bottom') {
+            $style .= "
+                #bppopup-wrap-{$module_id} .mfp-content {
+                    right:40px;bottom:0;
+                }
+            ";
+        } elseif ($location === 'left-bottom') {
+            $style .= "
+                #bppopup-wrap-{$module_id} .mfp-content {
+                    left:40px;bottom:0;
+                }
+            ";
+        } elseif ($location === 'left-top') {
+            $style .= "
+                #bppopup-wrap-{$module_id} .mfp-content {
+                    left:40px;top:0;
+                }
+            ";
+        }
+
+
+        return $style;
+    }
+
 }

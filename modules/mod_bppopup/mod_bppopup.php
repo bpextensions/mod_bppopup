@@ -39,6 +39,7 @@ $html_min_height  = (int)$params->get('html_min_height');
 $scroll_event     = $params->get('scroll_event', 'no');
 $scroll_length    = (int)$params->get('scroll_length', 1);
 $target           = $params->get('target', 'self');
+$location         = $params->get('location', 'center');
 
 require_once __DIR__ . '/helper.php';
 
