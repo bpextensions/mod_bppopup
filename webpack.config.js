@@ -27,8 +27,8 @@ Encore
         './.dev/scss/module.scss',
     ])
     .configureFilenames({
-        css: '[name]-[hash:6].css',
-        js: '[name]-[hash:6].js'
+        css: '[name]-[contenthash].css',
+        js: '[name]-[contenthashn].js'
     });
 
 // Export configurations

@@ -22,13 +22,14 @@
     "homepage": "https://github.com/bestproject/mod_bppopup#readme",
     "devDependencies": {
         "@babel/preset-env": "^7.7.4",
-        "@symfony/webpack-encore": "^0.28.2",
+        "@symfony/webpack-encore": "github:symfony/webpack-encore",
+        "caniuse-lite": "^1.0.30001183",
         "http-proxy": "^1.18.1",
         "magnific-popup": "^1.1.0",
         "node-forge": "^0.10.0",
-        "node-sass": "^4.13.1",
+        "node-sass": "^4.14.1",
         "object-path": "^0.11.5",
-        "sass-loader": "^7.3.1",
+        "sass-loader": "^9.0.1",
         "serialize-javascript": "^2.1.1",
         "webpack-notifier": "^1.8.0",
         "yargs-parser": "^20.2.3"

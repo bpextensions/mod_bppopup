@@ -1,0 +1,13 @@
+<ruleset name="style">
+    <arg value="s"/>
+    <arg value="p"/>
+    <arg name="extensions" value="php"/>
+    <arg name="colors"/>
+
+    <exclude-pattern>./vendor</exclude-pattern>
+    <exclude-pattern>./libraries</exclude-pattern>
+    <exclude-pattern>./.build</exclude-pattern>
+
+    <config name="testVersion" value="7.2-"/>
+    <rule ref="PHPCompatibility"/>
+</ruleset>

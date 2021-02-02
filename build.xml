@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="BP Popup" default="build:clean" basedir="." description="BP Popup build task">
-    
-    <property file="./build.properties" />
-    
+
+    <property file="./build.properties"/>
+
     <php expression="date('F Y')" returnProperty="build.date"/>
     <php expression="date('Y')" returnProperty="build.year"/>
-    
+
+    <target name="test">
+        <echo msg="Test each extension before build"/>
+        <phingcall target="test:compatibility"/>
+        <phingcall target="test:mod_bppopup"/>
+    </target>
+
+    <target name="test:compatibility">
+        <echo msg="Testing PHP 7.2 Compatibility"/>
+        <exec command="composer test:compatibility" checkreturn="true"/>
+    </target>
+
+    <target name="test:mod_bppopup">
+        <echo msg="Testing mod_bppopup"/>
+        <echo msg="No tests yet."/>
+    </target>
+
     <target name="build:mod_bppopup">
-        <echo msg="Creating module directory" />
-        <mkdir dir="./.build/mod_bppopup" />
+        <echo msg="Creating module directory"/>
+        <mkdir dir="./.build/mod_bppopup"/>
 
         <echo msg="Building assets with Webpack"/>
         <exec command="npm run prod" checkreturn="true"/>
-        
-        <echo msg="Building module installer" />
-        <copy todir="./.build/mod_bppopup" >
+
+        <echo msg="Building module installer"/>
+        <copy todir="./.build/mod_bppopup">
             <fileset dir="./modules/mod_bppopup" >
                 <include name="**/*" />
                 <exclude name=".dev/**" />
@@ -42,6 +58,7 @@
     </target>
     
     <target name="build">
+        <phingcall target="test"/>
 
         <echo msg="Creating build directory ./.build" />
         <mkdir dir="./.build" />

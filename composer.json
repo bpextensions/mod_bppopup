@@ -1,12 +1,21 @@
 {
     "scripts": {
-        "build": "phing"
+        "build": "phing",
+        "test:compatibility": [
+            "@test:compatibility:php72",
+            "@test:compatibility:php80"
+        ],
+        "test:compatibility:php72": "phpcs --standard=.phpcs/compatibility/php72.xml .",
+        "test:compatibility:php80": "phpcs --standard=.phpcs/compatibility/php80.xml ."
     },
     "require-dev": {
         "phing/phing": "2.*",
-        "php": ">=7.2"
+        "squizlabs/php_codesniffer": "^3.5",
+        "phpcompatibility/php-compatibility": "^9.3",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1"
     },
     "require": {
-        "ext-json": "*"
+        "ext-json": "*",
+        "php": "^7.2|^8.0"
     }
 }

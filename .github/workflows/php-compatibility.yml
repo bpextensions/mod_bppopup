@@ -1,0 +1,28 @@
+name: PHP 7.2-8.0
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v2
+
+      - name: Composer Installation
+        uses: php-actions/composer@v5
+
+      - name: PHP 7.2+ Compatibility
+        id: php72
+        uses: php-actions/composer@v5
+        with:
+          command: "test:compatibility:php72"
+
+      - name: PHP 8.0+ Compatibility
+        id: php80
+        uses: php-actions/composer@v5
+        with:
+          command: "test:compatibility:php80"

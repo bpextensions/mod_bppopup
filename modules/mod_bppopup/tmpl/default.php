@@ -120,7 +120,7 @@ if ($include_lightbox) {
 }
 
 // Create Magnific Popup options object
-$json = json_encode($options, JSON_THROW_ON_ERROR);
+$json = json_encode($options);
 
 // Just display the popup
 if ($scroll_event === 'no') {

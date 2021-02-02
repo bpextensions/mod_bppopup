@@ -1,11 +1,17 @@
 /**
+
+!/.dev
+!/.phpcs
+!/.phpcs/**
+!/.github
+!/.github/**
+
 !/modules/
 /modules/*
 !/modules/mod_bppopup/
 !/modules/mod_bppopup/*
 !/modules/mod_bppopup/.dev/**
 
-!/.dev
 !LICENSE
 !README.md
 !build.xml
