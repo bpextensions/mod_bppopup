@@ -15,5 +15,6 @@
 !package.json
 !package-lock.json
 !gulpfile.js
-!build.properties
+build.properties
+!build.properties.dist
 !webpack.config.js
